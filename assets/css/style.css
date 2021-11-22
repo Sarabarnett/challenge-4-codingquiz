@@ -74,3 +74,15 @@ header p {
   text-align: left;
   align-content:left;
 }
+
+#wrong {
+  font-size: 18px;
+  font-style: italic;
+  color: red;
+}
+
+#right {
+  font-size: 18px;
+  font-style: italic;
+  color: goldenrod;
+}

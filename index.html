@@ -11,6 +11,9 @@
 
 <body>
   <header>
+
+  <!--home page screen-->
+  <div id="quizStart">
     <h1>
       Coding Quiz
     </h1>
@@ -21,29 +24,32 @@
     <div class="start-btn">
       <button class="btn" id="start" type="button">Start Quiz!</button>
     </div>
+  </div>
 
-    <div class="quiz" id="question1">
-      <h3>What does HTML stand for?</h3>
-      <button class="btn one" type="submit">1. Hot Tamale Mega Love</button>
-      <button class="btn two" type="submit">2. Hypertext Medium Language</button>
-      <button class="btn three" type="submit">3. How To Meet Ladies</button>
-      <button class="btn four" type="submit">4. Hypertext Markup Language</button>
-    </div>
+  <!--question 1 div-->
+    <div class="quiz" id="question1"></div>
 
+  <!--question 2 div-->
     <div class="quiz" id="question2">
-      <h3>What is CSS used for?</h3>
+      <!-- <h3>What is CSS used for?</h3>
       <button class="btn one" type="submit">1. Make web pages look pretty</button>
       <button class="btn two" type="submit">2. Gives HTML and JS complex style</button>
-      <button class="btn three" type="submit">3. Both 1 and 2</button>
+      <button class="btn three" type="submit">3. Both 1 and 2</button> -->
     </div>
 
+  <!--question 3 div-->
     <div class="quiz" id="question3">
-      <h3>What are the three core languages of web pages?</h3>
+      <!-- <h3>What are the three core languages of web pages?</h3>
       <button class="btn one" type="submit">1. CSS, Python, C#</button>
       <button class="btn two" type="submit">2. HTML, Java, Ruby</button>
       <button class="btn three" type="submit">3. HTML, CSS, JavaScript</button>
-      <button class="btn four" type="submit">4. JavaScript, C++, Python</button>
+      <button class="btn four" type="submit">4. JavaScript, C++, Python</button> -->
     </div>
+
+    <div id="wrong"></div>
+
+    <div id="right"></div>
+    
   </header>
 
   <main>
@@ -51,9 +57,12 @@
       <h3>View Highscores</h3>
     </div>
 
-    <div class="timer">
+    <div class="timer" id="countdown">
       <h3>Time:</h3>
     </div>
 
   </main>
+
+  <script src="./assets/js/script.js"></script>
 </body>
+</html>
