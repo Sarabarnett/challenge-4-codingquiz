@@ -36,6 +36,8 @@ var startQuiz = function(event) {
  btn4.className = "btn four";
  document.getElementById("question1").appendChild(btn4);
 
+answerButtonHandler1();
+
 };
 
 
@@ -57,10 +59,7 @@ else if (targetEl.matches(".four")) {
   rightAnswer1.innerText = "CORRECT!!";
   document.getElementById("right").appendChild(rightAnswer1);
 }
-
-// setInterval(answerButtonHandler1,4000);
-//  clearInterval;
- questionTwo();
+questionTwo();
 };
 
 firstQuestionEl.addEventListener("click", answerButtonHandler1);
@@ -69,6 +68,12 @@ firstQuestionEl.addEventListener("click", answerButtonHandler1);
 
 
 var questionTwo = function(event) {
+
+  //set delay for funtion
+  var delayQuestion2 = setTimeout(questionTwo, 4000);
+  console.log("delay is working");
+  
+
   //remove first question
   var removeEl = document.getElementById("question1");
   removeEl.remove();
@@ -120,9 +125,10 @@ var answerButtonHandler2 = function(event) {
    document.getElementById("right").appendChild(rightAnswer2);
  }
 
- setTimeout(questionThree(), 3000);
  };
  
+
+
  secondQuestionEl.addEventListener("click", answerButtonHandler2);
 
 

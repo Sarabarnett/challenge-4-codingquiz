@@ -41,6 +41,11 @@ header p {
   margin: 10px;
 }
 
+.highscore a {
+  text-decoration: none;
+  color:rgb(184, 15, 184);
+}
+
 .timer {
   position: fixed;
   right: 0px;
