@@ -33,6 +33,10 @@ header p {
   margin: 5px;
 }
 
+.hide {
+  display: none;
+}
+
 .highscore {
   position:fixed;
   left: 0px;
@@ -89,5 +93,5 @@ header p {
 #right {
   font-size: 18px;
   font-style: italic;
-  color: goldenrod;
+  color: green;
 }
