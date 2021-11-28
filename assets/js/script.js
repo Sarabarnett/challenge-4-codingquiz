@@ -6,6 +6,7 @@ var fourthQuestionEl = document.querySelector("#question4");
 var timerEl = document.querySelector("#countdown");
 var rightAnswer = document.querySelector("#right");
 var wrongAnswer = document.querySelector("#wrong");
+var seconds = 60;
 
 var startQuiz = function(event) {
   //remove start quiz elements
@@ -50,11 +51,10 @@ var answerButtonHandler1 = function(event) {
 
  //display "wrong" for incorrect answer clicked
 if (targetEl.matches('.one, .two, .three')) {
-  // var wrongAnswer = document.getElementById("wrong");
    wrongAnswer.style.display= "block";
+   seconds = seconds - 10;
 }
 else if (targetEl.matches('.four')) {
-  // var rightAnswer = document.getElementById("right");
    rightAnswer.style.display= "block";
 }
 //delay questionTwo function
@@ -69,9 +69,7 @@ var questionTwo = function(event) {
   //remove first question
   var hideEl = document.getElementById("question1");
   hideEl.style.display = "none";
-  // var wrongAnswer = document.getElementById("wrong");
   wrongAnswer.style.display = "none";
-  var rightAnswer = document.getElementById("right");
   rightAnswer.style.display = "none";
 
   //create h3 element for question 2
@@ -104,13 +102,11 @@ var answerButtonHandler2 = function(event) {
  
   //display "wrong" for incorrect answer clicked
  if (targetEl.matches('.one, .two')) {
-
-  //  var wrongAnswer = document.getElementById("wrong");
    wrongAnswer.style.display= "block";
+   seconds = seconds - 10;
  }
   //display "right" for correct answer
  else if (targetEl.matches('.three')) {
-  //  var rightAnswer = document.getElementById("right");
    rightAnswer.style.display= "block";
  }
  //delay questionThree function
@@ -125,9 +121,7 @@ var answerButtonHandler2 = function(event) {
    //hide question 2
   var hideEl = document.getElementById("question2");
   hideEl.style.display = "none";
-  // var wrongAnswer = document.getElementById("wrong");
   wrongAnswer.style.display = "none";
-  // var rightAnswer = document.getElementById("right");
   rightAnswer.style.display = "none";
 
   //create h3 element for question 3
@@ -163,12 +157,11 @@ var answerButtonHandler3 = function(event) {
   var targetEl = event.target;
  
   //display "wrong" for incorrect answer clicked
- if (targetEl.matches('.one, .two .four')) {
-  //  var wrongAnswer = document.getElementById("wrong");
+ if (targetEl.matches('.one, .two, .four')) {
    wrongAnswer.style.display= "block";
+    seconds = seconds - 10;
  }
  else if (targetEl.matches('.three')) {
-   var rightAnswer = document.getElementById("right");
    rightAnswer.style.display= "block";
  }
  //delay questionFour function
@@ -179,13 +172,11 @@ thirdQuestionEl.addEventListener("click", answerButtonHandler3);
 
 
 var questionFour = function(event) {
-     //hide question 
-     var hideEl = document.getElementById("question3");
-     hideEl.style.display = "none";
-    //  var wrongAnswer = document.getElementById("wrong");
-     wrongAnswer.style.display = "none";
-     var rightAnswer = document.getElementById("right");
-     rightAnswer.style.display = "none";
+   //hide question 3
+    var hideEl = document.getElementById("question3");
+    hideEl.style.display = "none";
+    wrongAnswer.style.display = "none";
+    rightAnswer.style.display = "none";
 
   //create h3 elements for question 4
   var fourthQuestionEl = document.createElement("h3");
@@ -213,7 +204,6 @@ var questionFour = function(event) {
   btn4.innerText = "4. Back-End Development";
   btn4.className = "btn four";
   document.getElementById("question4").appendChild(btn4);
- 
 };
 
 var answerButtonHandler4 = function(event) {
@@ -221,27 +211,37 @@ var answerButtonHandler4 = function(event) {
   var targetEl = event.target;
 
   //display "wrong" for incorrent answer
-  if (targetEl.matches('.two .three .four')) {
-    // var wrongAnswer = document.getElementById("wrong");
-    wrongAnswer.style.display = "block";
+  if (targetEl.matches('.two, .three, .four')) {
+    wrongAnswer.style.display= "block";
+    seconds = seconds - 10;
   }
   //display "correct" for right answer
   else if (targetEl.matches('.one')) {
-    // var rightAnswer = document.getElementById("right");
-    rightAnswer.style.display = "block";
+    rightAnswer.style.display= "block";
   }
 };
 
 fourthQuestionEl.addEventListener("click", answerButtonHandler4);
 
-// var quizTimer = function() {
+  
 
-// }
+//one minute countdown
+var quizTimer = function() {
+  
+  setInterval(function() {
+  seconds--;
+  timerEl.innerHTML = "Time: " + seconds;
+  
+  if (seconds <= 0) {
+    clearInterval(quizTimer);
+    timerEl.innerHTML ="GAME OVER";
+  }
+}, 1000);
+}
 
 
 //start quiz when button is clicked
 startQuizEl.addEventListener("click", startQuiz);
 
-
 // //start timer when start quiz button is clicked
-// startQuizEl.addEventListener("click", quizTimer)
+startQuizEl.addEventListener("click", quizTimer)
