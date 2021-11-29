@@ -5,6 +5,7 @@ The purpose of this project is to hone in my skills with Web APIs and JavaScript
 
 ##Deployed Application
 The deployed coding quiz application that I have created can be accessed at this URL:
+https://sarabarnett.github.io/challenge-4-codingquiz/
 
 ##Contributions
 This application and all of it's code were made by Sara Barnett.
